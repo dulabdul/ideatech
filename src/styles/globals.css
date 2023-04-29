@@ -1,27 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  body {
+    @apply bg-bgDark object-cover object-center bg-no-repeat font-Inter h-[2000px];
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+  .dropdown-white {
+    background: radial-gradient(
+      circle,
+      rgba(185, 206, 234, 1) 0%,
+      rgba(42, 42, 42, 0) 20%
+    );
+  }
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-[#5380EA] to-[#1AA37A];
+  }
+  .button {
+    @apply cursor-pointer px-7 py-1 transition-all;
+  }
+}
+header > .container > nav {
+  background-color: initial !important;
+}
+header > nav .active {
+  @apply font-semibold text-white;
+}
+.scrolled {
+  transition: all 0.3s linear;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(8px);
+  @apply shadow-md shadow-indigo-200/10;
 }
