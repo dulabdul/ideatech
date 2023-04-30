@@ -36,7 +36,7 @@ export default function Hero() {
                 IdeaTech
               </span>
             </CustomButton>
-            <h1 className='text-4xl md:text-5xl text-light leading-snug tracking-wider md:tracking-widest z-10'>
+            <h1 className='text-4xl md:text-5xl text-light font-semibold leading-snug tracking-wider md:tracking-widest z-10'>
               Perusahaan Jasa <span className='text-primary'>Website</span>,
               <span className='text-primary'>Branding</span>, dan{' '}
               <span className='text-primary'>Digital Marketing</span>
@@ -53,7 +53,7 @@ export default function Hero() {
                 href='#'
                 type='link'
                 isExternal
-                className='md:py-3 text-light items-center text-xl hover:opacity-80 button'>
+                className='md:py-3 text-light items-center text-xl hover:opacity-80 button z-10'>
                 Konsultasi Ide Anda{' '}
                 <BsFillArrowRightCircleFill className='ml-2' />
               </CustomButton>
@@ -77,7 +77,7 @@ export default function Hero() {
               width={634}
               height={634}
               alt='gradient-two'
-              className='absolute z-10'
+              className='absolute z-0'
             />
           </div>
           <Image
@@ -85,7 +85,7 @@ export default function Hero() {
             width={634}
             height={634}
             alt='gradient-three'
-            className='absolute z-10'
+            className='absolute z-0'
           />
         </div>
       </div>
