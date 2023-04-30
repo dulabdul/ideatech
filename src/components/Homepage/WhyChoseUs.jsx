@@ -48,7 +48,8 @@ export default function WhyChoseUs() {
             alt='dashed text'
           />
           <p className='text-tersier font-normal text-2xl mt-4'>
-            Alasan ideatech Digital Mitra Bisnis Tepat untuk Anda
+            Alasan <span className='text-primary font-bold'>IdeaTech</span>{' '}
+            Digital Mitra Bisnis Tepat untuk Anda
           </p>
           <div className='w-full h-full overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-4 py-8 md:py-12'>
             {data.map((item, index) => (
