@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 import { CustomButton } from '..';
 import { FiArrowRightCircle } from 'react-icons/fi';
+
 export function Card({ icons, title, description }) {
   return (
     <div className='bg-[#3F3F3F] shadow-md rounded-xl px-8 py-12'>
@@ -42,8 +43,35 @@ export function CardService({ images, title, description, url }) {
   );
 }
 
+export function CardPortfolio({ image, title, url }) {
+  return (
+    <div className='rounded-lg overflow-hidden'>
+      <CustomButton
+        type='link'
+        isExternal
+        target='_blank'
+        href={url}>
+        <Image
+          alt={title}
+          src={image}
+          width={500}
+          height={500}
+          style={{ width: '100%', height: '100%' }}
+          className='object-cover object-center hover:scale-110 transition-all duration-400 ease-in-out'
+        />
+      </CustomButton>
+    </div>
+  );
+}
+
 Card.propTypes = {
   icons: PropTypes.node,
   title: PropTypes.string,
   description: PropTypes.string,
+};
+CardService.propTypes = {
+  image: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  url: PropTypes.string,
 };

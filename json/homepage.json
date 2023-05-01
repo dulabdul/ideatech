@@ -1,0 +1,91 @@
+{
+  "categories": [
+    {
+      "name": "website",
+      "projects": [
+        {
+          "id": 1,
+          "title": "BillsStone Luxury",
+          "url": "https://facebook.com",
+          "imageUrl": "/images/portfolio/portofolio_web_1.jpeg"
+        },
+        {
+          "id": 2,
+          "title": "BillsStone Luxury",
+          "url": "https://facebook.com",
+          "imageUrl": "/images/portfolio/portofolio_web_2.jpeg"
+        },
+        {
+          "id": 3,
+          "title": "BillsStone Luxury",
+          "url": "https://facebook.com",
+          "imageUrl": "/images/portfolio/portofolio_web_3.jpeg"
+        },
+        {
+          "id": 4,
+          "title": "BillsStone Luxury",
+          "url": "https://facebook.com",
+          "imageUrl": "/images/portfolio/portofolio_web_4.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "branding & content creation",
+      "projects": [
+        {
+          "id": 1,
+          "title": "hallaw apps",
+          "url": "https://facebook.com",
+          "imageUrl": "/images/portfolio/portofolio_logo_1.jpeg"
+        },
+        {
+          "id": 2,
+          "title": "hallaw apps",
+          "url": "https://facebook.com",
+          "imageUrl": "/images/portfolio/portofolio_logo_2.jpeg"
+        },
+        {
+          "id": 3,
+          "title": "hallaw apps",
+          "url": "https://facebook.com",
+          "imageUrl": "/images/portfolio/portofolio_logo_3.jpeg"
+        },
+        {
+          "id": 4,
+          "title": "hallaw apps",
+          "url": "https://facebook.com",
+          "imageUrl": "/images/portfolio/portofolio_logo_4.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "digital marketing",
+      "projects": [
+        {
+          "id": 1,
+          "title": "hallaw apps",
+          "url": "https://facebook.com",
+          "imageUrl": "/images/portfolio/portofolio_dm_1.jpeg"
+        },
+        {
+          "id": 2,
+          "title": "hallaw apps",
+          "url": "https://facebook.com",
+          "imageUrl": "/images/portfolio/portofolio_dm_2.jpeg"
+        },
+        {
+          "id": 3,
+          "title": "hallaw apps",
+          "url": "https://facebook.com",
+          "imageUrl": "/images/portfolio/portofolio_dm_3.jpeg"
+        },
+        {
+          "id": 4,
+          "title": "hallaw apps",
+          "url": "https://facebook.com",
+          "imageUrl": "/images/portfolio/portofolio_dm_4.jpeg"
+        }
+      ]
+    }
+  ]
+}

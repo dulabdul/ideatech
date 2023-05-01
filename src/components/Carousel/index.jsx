@@ -63,7 +63,6 @@ export default function CarouselSlider({ deviceType }) {
       src: diramLogo,
     },
   ];
-  console.log(images.map((image) => image));
   return (
     <Carousel
       infinite={true}

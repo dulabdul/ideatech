@@ -1,4 +1,11 @@
-import { Layout, Hero, Client, WhyChoseUs, Service } from '@/components';
+import {
+  Layout,
+  Hero,
+  Client,
+  WhyChoseUs,
+  Service,
+  Portfolio,
+} from '@/components';
 
 export default function Home() {
   return (
@@ -8,6 +15,7 @@ export default function Home() {
         <Client />
         <WhyChoseUs />
         <Service />
+        <Portfolio />
       </Layout>
     </>
   );
