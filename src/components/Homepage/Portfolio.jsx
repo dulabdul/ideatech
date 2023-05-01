@@ -66,7 +66,7 @@ export default function Portfolio() {
             isFlex
             target='_blank'
             href='https://facebook.com'
-            className='text-light underline hover:text-blue-500 items-center'>
+            className='text-light underline hover:text-primary items-center'>
             Lihat semua portofolio{' '}
             <FiArrowRightCircle className='ml-2 text-xl' />
           </CustomButton>

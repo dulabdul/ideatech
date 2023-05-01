@@ -2,7 +2,7 @@
 @tailwind base;
 @layer base {
   body {
-    @apply bg-bgDark object-cover object-center bg-no-repeat font-Inter h-[2000px];
+    @apply bg-bgDark object-cover object-center bg-no-repeat font-Inter;
   }
 }
 @tailwind components;

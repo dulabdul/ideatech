@@ -5,6 +5,7 @@ import {
   WhyChoseUs,
   Service,
   Portfolio,
+  Testimonial,
 } from '@/components';
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         <WhyChoseUs />
         <Service />
         <Portfolio />
+        <Testimonial />
       </Layout>
     </>
   );

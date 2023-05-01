@@ -35,7 +35,7 @@ export function CardService({ images, title, description, url }) {
           isFlex
           target='_blank'
           href={url}
-          className='text-light underline hover:text-blue-500 items-center'>
+          className='text-light underline hover:text-primary items-center'>
           Lihat daftar harga <FiArrowRightCircle className='ml-2 text-xl' />
         </CustomButton>
       </div>
@@ -64,6 +64,23 @@ export function CardPortfolio({ image, title, url }) {
   );
 }
 
+export function CardTestimonial({ name, imageUrl, review }) {
+  return (
+    <div className='bg-[#3F3F3F] rounded-xl shadow-md flex items-center justify-start px-6 py-8'>
+      <Image
+        src={imageUrl}
+        alt={name}
+        width={72}
+        height={72}
+      />
+      <div className='ml-4'>
+        <h4 className='text-light font-normal text-2xl capitalize'>{name}</h4>
+        <p className='text-tersier font-light text-sm'>{review}</p>
+      </div>
+    </div>
+  );
+}
+
 Card.propTypes = {
   icons: PropTypes.node,
   title: PropTypes.string,
@@ -74,4 +91,15 @@ CardService.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   url: PropTypes.string,
+};
+
+CardPortfolio.propTypes = {
+  image: PropTypes.string,
+  title: PropTypes.string,
+  url: PropTypes.string,
+};
+CardTestimonial.propTypes = {
+  imageUrl: PropTypes.string,
+  name: PropTypes.string,
+  review: PropTypes.string,
 };

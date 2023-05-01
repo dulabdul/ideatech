@@ -74,7 +74,7 @@ export default function Header() {
               width={64}
               height={64}
               src='/example.png'
-              alt='Abdul Rahman Logo'
+              alt='Tidea Logo'
             />
           </Navbar.Brand>
           <div className='flex md:order-2 gap-2'>
