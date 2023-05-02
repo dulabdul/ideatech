@@ -11,6 +11,7 @@ import ypkpLogo from '../../assets/images/client/ypkp.png';
 import bjsLogo from '../../assets/images/client/bjs.png';
 import diramLogo from '../../assets/images/client/diram.png';
 import styles from './carousel.module.css';
+
 export default function CarouselSlider({ deviceType }) {
   const responsive = {
     desktop: {
@@ -64,22 +65,25 @@ export default function CarouselSlider({ deviceType }) {
     },
   ];
   return (
-    <Carousel
-      infinite={true}
-      ssr
-      partialVisbile={false}
-      deviceType={deviceType}
-      responsive={responsive}
-      itemClass={styles.imageItem}>
-      {images.map((item, index) => (
-        <Image
-          key={index}
-          src={item.src}
-          alt={item.name}
-          style={{ width: '100%', height: '100%', cursor: 'pointer' }}
-          draggable={false}
-        />
-      ))}
-    </Carousel>
+    <>
+      <Carousel
+        infinite={true}
+        ssr
+        partialVisbile={false}
+        deviceType={deviceType}
+        responsive={responsive}
+        removeArrowOnDeviceType={['tablet', 'mobile']}
+        itemClass={styles.imageItem}>
+        {images.map((item, index) => (
+          <Image
+            key={index}
+            src={item.src}
+            alt={item.name}
+            style={{ width: '100%', height: '100%', cursor: 'pointer' }}
+            draggable={false}
+          />
+        ))}
+      </Carousel>
+    </>
   );
 }

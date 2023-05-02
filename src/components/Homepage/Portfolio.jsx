@@ -4,12 +4,26 @@ import Image from 'next/image';
 import useData from '@/hooks';
 import { CardPortfolio, CustomButton } from '..';
 import { FiArrowRightCircle } from 'react-icons/fi';
-export default function Portfolio() {
+import { Dropdown } from 'flowbite-react';
+import gradientWhiteBG from '../../assets/images/design/g-white.png';
+import gradient56 from '../../assets/images/design/rectangle-56.png';
+import gradient60 from '../../assets/images/design/rectangle-60.png';
+export default function Portfolio({ deviceType }) {
   const { data, isError, isLoading } = useData();
   const [portfolioData, setPortfolioData] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('website');
+  const [windowWidth, setWindoWidth] = useState(null);
   useEffect(() => {
+    setWindoWidth(window.screen.width);
     setPortfolioData(data?.categories);
+    const handleWindowResize = () => {
+      setWindoWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
   }, [data]);
   function filteredProject() {
     if (!selectedCategory) {
@@ -22,11 +36,11 @@ export default function Portfolio() {
   function handleCategoryChange(e) {
     setSelectedCategory(e.target.value);
   }
-  console.log(selectedCategory);
+
   return (
     <section className='w-full h-full overflow-hidden px-6 py-12 md:px-12 md:py-16'>
-      <div className='container mx-auto'>
-        <div className='flex flex-col items-center justify-center'>
+      <div className='container mx-auto relative z-10 md:static'>
+        <div className='flex relative z-10 md:static flex-col items-center justify-center'>
           <h1 className='text-light font-semibold text-2xl md:text-4xl'>
             Portofolio Kami
           </h1>
@@ -44,21 +58,51 @@ export default function Portfolio() {
             Berikut beberapa hasil pekerjaan kami sebagai bahan pertimbangan
             Anda memilih jasa kami.
           </p>
+          <Image
+            src={gradient56}
+            width={634}
+            height={634}
+            alt='gradient-one'
+            className='absolute z-0'
+          />
         </div>
-        <div className='flex flex-row items-center justify-between py-16 md:py-12'>
-          <div className='flex gap-x-4'>
-            {portfolioData?.map((item, index) => (
-              <button
-                key={index}
-                type='button'
-                value={item.name}
-                onClick={handleCategoryChange}
-                className={`button text-light capitalize border border-primary ring-1 hover:bg-primary ${
-                  selectedCategory === item.name ? 'bg-primary' : ''
-                }`}>
-                {item.name}
-              </button>
-            ))}
+        <div className='grid grid-cols-1 md:grid-cols-2 md:flex-nowrap relative z-10 items-center justify-between py-16 md:py-12'>
+          <div className='portoflio_section flex items-center justify-start gap-y-4 md:gap-y-0 gap-x-4 overflow-x-auto'>
+            {windowWidth < 576 ? (
+              <Dropdown
+                inline={true}
+                className='text-light'
+                label={selectedCategory}
+                dismissOnClick={false}>
+                {portfolioData?.map((item, index) => (
+                  <Dropdown.Item
+                    className='capitalize'
+                    key={index}>
+                    <button
+                      type='button'
+                      value={item.name}
+                      className='capitalize'
+                      onClick={handleCategoryChange}>
+                      {item.name}
+                    </button>
+                  </Dropdown.Item>
+                ))}
+              </Dropdown>
+            ) : (
+              portfolioData?.map((item, index) => (
+                <div key={index}>
+                  <button
+                    type='button'
+                    value={item.name}
+                    onClick={handleCategoryChange}
+                    className={`px-6 py-1 text-start text-light capitalize border border-primary ring-1 hover:bg-primary ${
+                      selectedCategory === item.name ? 'bg-primary' : ''
+                    }`}>
+                    {item.name}
+                  </button>
+                </div>
+              ))
+            )}
           </div>
           <CustomButton
             type='link'
@@ -66,7 +110,7 @@ export default function Portfolio() {
             isFlex
             target='_blank'
             href='https://facebook.com'
-            className='text-light underline hover:text-primary items-center'>
+            className='text-light underlinex md:justify-end hover:text-primary items-center mt-4 md:mt-0'>
             Lihat semua portofolio{' '}
             <FiArrowRightCircle className='ml-2 text-xl' />
           </CustomButton>
@@ -98,6 +142,13 @@ export default function Portfolio() {
                     ));
               })}
         </div>
+        <Image
+          src={gradientWhiteBG}
+          width={634}
+          height={634}
+          alt='gradient-one'
+          className='absolute z-0'
+        />
       </div>
     </section>
   );

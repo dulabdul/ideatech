@@ -21,6 +21,9 @@
   .button {
     @apply cursor-pointer px-7 py-1 transition-all;
   }
+  .portoflio_section > .w-fit > button {
+    @apply text-light capitalize py-1 px-4 bg-transparent border border-primary hover:bg-primary transition-all;
+  }
 }
 header > .container > nav {
   background-color: initial !important;

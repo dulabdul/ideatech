@@ -9,6 +9,8 @@ import { FaMapMarker } from 'react-icons/fa';
 import { GiReceiveMoney } from 'react-icons/gi';
 import { HiDocumentText } from 'react-icons/hi';
 import { AiFillInstagram } from 'react-icons/ai';
+import Image from 'next/image';
+import gradient56 from '../../assets/images/design/rectangle-56.png';
 export default function Footer() {
   const d = new Date();
   let year = d.getFullYear();
@@ -69,7 +71,14 @@ export default function Footer() {
   return (
     <footer className='w-full h-full overflow-hidden px-6 pt-16 pb-8 md:px-12 md:pt-40'>
       <div className='mx-auto container'>
-        <div className='flex flex-col items-center justify-center gap-4'>
+        <div className='flex relative z-10 flex-col items-center justify-center gap-4'>
+          <Image
+            src={gradient56}
+            width={634}
+            height={634}
+            alt='gradient-one'
+            className='absolute z-0'
+          />
           <h1 className='text-light font-semibold text-2xl md:text-5xl text-center leading-relaxed'>
             Giliran Anda Membuktikan <br /> Kualitas Jasa Kami
           </h1>
@@ -86,7 +95,7 @@ export default function Footer() {
               isFlex
               isPrimary
               isRounded
-              className='text-light button h-12 md:h-[60px] text-xl whitespace-nowrap md:text-2xl hover:bg-transparent hover:border hover:border-primary items-center'>
+              className='text-light relative z-10 button h-12 md:h-[60px] text-xl whitespace-nowrap md:text-2xl hover:bg-transparent hover:border hover:border-primary items-center'>
               <BsFillTelephoneFill className='text-xl mr-2' /> Konsultasi Gratis
               Sekarang
             </CustomButton>

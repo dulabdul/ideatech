@@ -19,8 +19,8 @@ export default function Hero() {
       />
       <div className='md:h-[100vh] flex flex-col justify-center'>
         <div
-          className={`w-full container relative mx-auto grid grid-cols-1 md:grid-cols-2 items-center px-6 md:px-12 py-16 justify-center rounded-2xl`}>
-          <div className='flex  md:row-start-auto flex-col pt-16 gap-y-2 justify-start text-center md:text-start md:justify-center md:gap-y-6 w-full'>
+          className={`w-full container relative z-10 mx-auto grid grid-cols-1 md:grid-cols-2 items-center px-6 md:px-12 py-16 justify-center rounded-2xl`}>
+          <div className='flex md:row-start-auto flex-col pt-16 gap-y-2 justify-start text-center md:text-start md:justify-center md:gap-y-6 w-full'>
             <Image
               src={gradient54}
               width={634}
@@ -60,7 +60,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className='w-full h-full hidden md:flex justify-center '>
+          <div className='w-full h-full relative z-10 hidden md:flex justify-center '>
             <Image
               src={heroImg}
               width={420}

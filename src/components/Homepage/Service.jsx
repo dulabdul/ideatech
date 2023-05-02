@@ -5,6 +5,8 @@ import service1 from '../../assets/images/design/service-1.png';
 import service2 from '../../assets/images/design/service-2.png';
 import service3 from '../../assets/images/design/service-3.png';
 import { CardService } from '..';
+import gradient56 from '../../assets/images/design/rectangle-56.png';
+import gradient54 from '../../assets/images/design/rectangle-54.png';
 export default function Service() {
   const data = [
     {

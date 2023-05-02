@@ -66,14 +66,14 @@ export function CardPortfolio({ image, title, url }) {
 
 export function CardTestimonial({ name, imageUrl, review }) {
   return (
-    <div className='bg-[#3F3F3F] rounded-xl shadow-md flex items-center justify-start px-6 py-8'>
+    <div className='bg-[#3F3F3F] rounded-xl shadow-md flex items-center flex-wrap md:flex-nowrap justify-start px-6 py-8 gap-y-4'>
       <Image
         src={imageUrl}
         alt={name}
         width={72}
         height={72}
       />
-      <div className='ml-4'>
+      <div className='md:ml-4'>
         <h4 className='text-light font-normal text-2xl capitalize'>{name}</h4>
         <p className='text-tersier font-light text-sm'>{review}</p>
       </div>
