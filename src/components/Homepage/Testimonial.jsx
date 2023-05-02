@@ -62,7 +62,7 @@ export default function Testimonial() {
             alt='gradient-one'
             className='absolute z-0'
           />
-          <div className='flex flex-col flex-wrap items-center justify-center gap-4'>
+          <div className='flex  flex-col flex-wrap items-center justify-center gap-4'>
             {testimonialList.map((item, index) => (
               <CardTestimonial
                 key={index}

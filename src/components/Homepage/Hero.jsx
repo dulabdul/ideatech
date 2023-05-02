@@ -12,6 +12,7 @@ export default function Hero() {
     <section className='w-full md:h-full overflow-hidden'>
       <Image
         src={gradient59}
+        priority
         width={634}
         height={634}
         alt='gradient-one'

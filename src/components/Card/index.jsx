@@ -66,7 +66,7 @@ export function CardPortfolio({ image, title, url }) {
 
 export function CardTestimonial({ name, imageUrl, review }) {
   return (
-    <div className='bg-[#3F3F3F] rounded-xl shadow-md flex items-center flex-wrap md:flex-nowrap justify-start px-6 py-8 gap-y-4'>
+    <div className='bg-[#3F3F3F] animate-float rounded-xl shadow-md flex items-center flex-wrap md:flex-nowrap justify-start px-6 py-8 gap-y-4'>
       <Image
         src={imageUrl}
         alt={name}
@@ -99,7 +99,7 @@ CardPortfolio.propTypes = {
   url: PropTypes.string,
 };
 CardTestimonial.propTypes = {
-  imageUrl: PropTypes.string,
+  imageUrl: PropTypes.object,
   name: PropTypes.string,
   review: PropTypes.string,
 };

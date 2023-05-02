@@ -117,7 +117,7 @@ export default function Footer() {
               <h3 className='text-light font-semibold text-3xl capitalize'>
                 {item.title}
               </h3>
-              <div className='flex flex-col items-start justify-center gap-y-4 gap-x-2 mt-4'>
+              <div className='flex relative z-10 flex-col items-start justify-center gap-y-4 gap-x-2 mt-4'>
                 {item.menu.map((list, index) => (
                   <CustomButton
                     key={index}

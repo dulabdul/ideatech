@@ -9,16 +9,17 @@ export default function Header() {
     {
       name: 'Home',
       isDropdown: false,
-      destination: {},
+      destination: '/',
     },
     {
       name: 'Profile',
       isDropdown: false,
-      destination: {},
+      destination: '/profile',
     },
     {
       name: 'Layanan',
       isDropdown: true,
+      destination: '/layanan',
       dropdownContent: [
         {
           title: 'Website Development',
@@ -35,12 +36,12 @@ export default function Header() {
       name: 'Portofolio',
       isDropdown: false,
 
-      destination: {},
+      destination: 'portofolio',
     },
     {
       name: 'Kontak',
       isDropdown: false,
-      destination: {},
+      destination: '/kontak',
     },
   ];
   const [scrolledNav, setScrolledNav] = useState(null);
@@ -73,6 +74,7 @@ export default function Header() {
             <Image
               width={64}
               height={64}
+              style={{ width: 'auto', height: 'auto' }}
               src='/example.png'
               alt='Tidea Logo'
             />
@@ -98,9 +100,9 @@ export default function Header() {
               item.isDropdown ? (
                 <li
                   key={index}
-                  className='mt-2 text-tersier'>
+                  className='mt-2 text-tersier hover:text-primary transition-all'>
                   <Dropdown
-                    className='transition-all duration-400 '
+                    className='transition-all duration-400'
                     inline={true}
                     label={item.name}>
                     {item.dropdownContent.map((dropdown, index) => (
@@ -115,8 +117,11 @@ export default function Header() {
                   key={index}
                   className='mt-2'>
                   <CustomButton
-                    type='button'
-                    className='text-tersier'>
+                    type='link'
+                    href={item.destination}
+                    isExternal
+                    target='_blank'
+                    className='text-tersier hover:text-primary transition-all'>
                     {item.name}
                   </CustomButton>
                 </li>
