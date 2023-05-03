@@ -24,6 +24,12 @@
   .portoflio_section > .w-fit > button {
     @apply text-light capitalize py-1 px-4 bg-transparent border border-primary hover:bg-primary transition-all;
   }
+  .custom-dot-list-style > li > button {
+    @apply border border-primary;
+  }
+  .custom-dot-list-style > .react-multi-carousel-dot--active > button {
+    @apply bg-primary;
+  }
 }
 header > .container > nav {
   background-color: initial !important;

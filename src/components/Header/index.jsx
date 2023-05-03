@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { FiDownload } from 'react-icons/fi';
 import styles from './Header.module.css';
 import CustomButton from '../Button';
+import Link from 'next/link';
 export default function Header() {
   const menuList = [
     {
@@ -23,11 +24,15 @@ export default function Header() {
       dropdownContent: [
         {
           title: 'Website Development',
-          destionation: {},
+          destionation: '/layanan/website',
         },
         {
           title: 'Digital Marketing',
-          destionation: {},
+          destionation: '/layanan/digital-marketing',
+        },
+        {
+          title: 'Branding & Content Creation',
+          destionation: '/layanan/branding-content-creation',
         },
       ],
       destination: {},
@@ -36,7 +41,7 @@ export default function Header() {
       name: 'Portofolio',
       isDropdown: false,
 
-      destination: 'portofolio',
+      destination: '/portfolio',
     },
     {
       name: 'Kontak',
@@ -68,9 +73,9 @@ export default function Header() {
         <Navbar
           fluid={true}
           rounded={true}>
-          <Navbar.Brand
+          <Link
             href='/'
-            className=''>
+            className='flex items-center'>
             <Image
               width={64}
               height={64}
@@ -78,7 +83,7 @@ export default function Header() {
               src='/example.png'
               alt='Tidea Logo'
             />
-          </Navbar.Brand>
+          </Link>
           <div className='flex md:order-2 gap-2'>
             <CustomButton
               href='#'
@@ -107,7 +112,9 @@ export default function Header() {
                     label={item.name}>
                     {item.dropdownContent.map((dropdown, index) => (
                       <Dropdown.Item key={index}>
-                        {dropdown.title}
+                        <Link href={dropdown.destionation}>
+                          {dropdown.title}
+                        </Link>
                       </Dropdown.Item>
                     ))}
                   </Dropdown>
@@ -116,14 +123,12 @@ export default function Header() {
                 <li
                   key={index}
                   className='mt-2'>
-                  <CustomButton
+                  <Link
                     type='link'
                     href={item.destination}
-                    isExternal
-                    target='_blank'
                     className='text-tersier hover:text-primary transition-all'>
                     {item.name}
-                  </CustomButton>
+                  </Link>
                 </li>
               )
             )}

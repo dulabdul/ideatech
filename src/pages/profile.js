@@ -1,7 +1,13 @@
+import { Layout, About, Client, TestimonialProfile } from '@/components';
+
 export default function Profile() {
   return (
     <>
-      <h1>Profile</h1>
+      <Layout>
+        <About />
+        <Client />
+        <TestimonialProfile />
+      </Layout>
     </>
   );
 }

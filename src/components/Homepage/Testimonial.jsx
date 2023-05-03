@@ -3,8 +3,8 @@ import { CardTestimonial } from '..';
 import testi1 from '../../assets/images/design/testi-1.png';
 import testi2 from '../../assets/images/design/testi-2.png';
 import testi3 from '../../assets/images/design/testi-3.png';
-import Image from 'next/image';
 import testiBg from '../../assets/images/design/testi.png';
+import Image from 'next/image';
 import dashed from '../../assets/images/design/dashed.png';
 import gradient56 from '../../assets/images/design/rectangle-56.png';
 import gradient54 from '../../assets/images/design/rectangle-54.png';
@@ -15,18 +15,22 @@ export default function Testimonial() {
       review:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae, in tristique senectus dui pharetra sit.',
       imageUrl: testi1,
+      job: 'ceo fht group',
     },
+
     {
       name: 'Andrew Schultz',
       review:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae, in tristique senectus dui pharetra sit.',
       imageUrl: testi2,
+      job: 'ceo fht group',
     },
     {
       name: 'Andrew Schultz',
       review:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae, in tristique senectus dui pharetra sit.',
       imageUrl: testi3,
+      job: 'ceo fht group',
     },
   ];
   return (
@@ -69,6 +73,7 @@ export default function Testimonial() {
                 review={item.review}
                 imageUrl={item.imageUrl}
                 name={item.name}
+                job={item.job}
               />
             ))}
           </div>

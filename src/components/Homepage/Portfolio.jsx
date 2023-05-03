@@ -8,6 +8,7 @@ import { Dropdown } from 'flowbite-react';
 import gradientWhiteBG from '../../assets/images/design/g-white.png';
 import gradient56 from '../../assets/images/design/rectangle-56.png';
 import gradient60 from '../../assets/images/design/rectangle-60.png';
+import Link from 'next/link';
 export default function Portfolio({ deviceType }) {
   const { data, isError, isLoading } = useData();
   const [portfolioData, setPortfolioData] = useState(null);
@@ -104,16 +105,12 @@ export default function Portfolio({ deviceType }) {
               ))
             )}
           </div>
-          <CustomButton
-            type='link'
-            isExternal
-            isFlex
-            target='_blank'
-            href='https://facebook.com'
-            className='text-light underlinex md:justify-end hover:text-primary items-center mt-4 md:mt-0'>
+          <Link
+            href='/portfolio'
+            className='flex text-light underlinex md:justify-end hover:text-primary items-center mt-4 md:mt-0'>
             Lihat semua portofolio{' '}
             <FiArrowRightCircle className='ml-2 text-xl' />
-          </CustomButton>
+          </Link>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-center'>
           {selectedCategory === 'website'

@@ -14,21 +14,21 @@ export default function Service() {
       title: 'Website Design & Development',
       description:
         'Pengembangan website menggunakan teknologi wordpress maupun custom sesuai kebutuhan bisnis Anda untuk sistem informasi, administrasi, serta promosi.',
-      url: '/',
+      url: '/layanan/website',
     },
     {
       imageUrl: service2,
       title: 'Branding, Design Promotion & Content Creation',
       description:
         'Pembuatan desain seperti Logo, Stationary, Marketing Kit Design Social Media Content Design, serta Photo & Videography untuk kebutuhan branding maupun promosi.',
-      url: '/',
+      url: '/layanan/branding-content-creation',
     },
     {
       imageUrl: service3,
       title: 'SEO, Digital Marketing & Advertising',
       description:
         'Layanan jasa pemasaran melalui media online seperti beriklan di Google, Facebook, Instagram, Tiktok, Marketplace, serta Optimasi peringkat Website di Google.',
-      url: '/',
+      url: '/layanan/digital-marketing',
     },
   ];
   return (
