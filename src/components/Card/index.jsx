@@ -83,7 +83,7 @@ export function CardTestimonial({ name, imageUrl, review, job }) {
 export function CardTestimonialProfile({ imageUrl, name, review, job }) {
   return (
     <div className='bg-transparent md:border md:border-tersier md:ring-1 md:px-12 md:py-8 mt-4 rounded-full'>
-      <div className='flex flex-wrap items-start gap-y-4 gap-x-6'>
+      <div className='flex flex-wrap items-start gap-y-4 gap-x-6 cursor-pointer'>
         <Image
           src={imageUrl}
           alt={name}
