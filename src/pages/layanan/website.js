@@ -5,6 +5,7 @@ import {
   PortofolioService,
   TestimonialPages,
   Price,
+  CardTestimonialRounded,
 } from '@/components';
 import React from 'react';
 import heroImg from '../../assets/images/design/hero.png';
@@ -23,10 +24,17 @@ export default function Website() {
       'Kodeight Digital berkomitmen mengembangkan website aplikasi dengan kualitas terbaik untuk meningkatkan keuntungan serta nilai perusahaan Anda.',
     buttonCTA: true,
   };
-  const taglineData = {
+  const taglineDataServiceReason = {
+    headTagline: 'Kenapa Memilih Kami?',
     tagline: 'Website Berkualitas, Bisnis Anda Naik Kelas',
     taglineDescription:
-      'Sederet fitur berkelas tersedia di tiap paket jasa pembuatan website',
+      'Sederet fitur berkelas tersedia di tiap paket jasa pembuatan website.',
+  };
+  const taglineDataPortfolio = {
+    headTagline: 'Portofolio Kami',
+    tagline: 'Paket Harga Jasa Pembuatan Website',
+    taglineDescription:
+      'Berikut beberapa hasil pekerjaan kami sebagai bahan pertimbangan Anda memilih jasa kami.',
   };
   const serviceData = [
     {
@@ -60,6 +68,12 @@ export default function Website() {
         'Selama Anda masih menggunakan layanan di Kodeight kami pastikan website Anda selalu optimal dengan jaminan garansi dan maintenance.',
     },
   ];
+  const taglineDataCardProfile = {
+    headTagline: 'Testimonial Mitra Bisnis Kami',
+    tagline: '',
+    taglineDescription:
+      'Pendapat klien kami yang puas dengan pelayanan yang diberikan oleh Kodeight Digital. Sekarang adalah giliran Anda untuk menjadi seperti mereka dengan menggunakan layanan yang kami tawarkan.',
+  };
   return (
     <>
       <Layout>
@@ -72,12 +86,21 @@ export default function Website() {
         />
         <CardServiceReason
           data={serviceData}
-          tagline={taglineData.tagline}
-          taglineDescription={taglineData.taglineDescription}
+          headTagline={taglineDataServiceReason.headTagline}
+          tagline={taglineDataServiceReason.tagline}
+          taglineDescription={taglineDataServiceReason.taglineDescription}
         />
-        <PortofolioService />
+        <PortofolioService
+          headTagline={taglineDataPortfolio.headTagline}
+          tagline={taglineDataPortfolio.tagline}
+          taglineDescription={taglineDataPortfolio.taglineDescription}
+        />
         <Price />
-        <TestimonialPages />
+        <CardTestimonialRounded
+          headTagline={taglineDataCardProfile.headTagline}
+          tagline={taglineDataCardProfile.tagline}
+          taglineDescription={taglineDataCardProfile.taglineDescription}
+        />
       </Layout>
     </>
   );

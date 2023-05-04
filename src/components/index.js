@@ -1,5 +1,5 @@
 import CustomButton from './Button';
-import {
+import CardTestimonialRounded, {
   Card,
   CardPortfolio,
   CardPrice,
@@ -9,6 +9,7 @@ import {
   CardTestimonialProfile,
 } from './Card';
 import CarouselSlider from './Carousel';
+import Heading from './Heading';
 import Hero from './Hero';
 import Client from './Homepage/Client';
 import Portfolio from './Homepage/Portfolio';
@@ -20,7 +21,6 @@ import Price from './Layanan/Price';
 
 import Layout from './Layout';
 import About from './Profile/About';
-import TestimonialPages from './Testimonial';
 
 export {
   Layout,
@@ -34,7 +34,6 @@ export {
   // end of homepage
   // profile page
   About,
-  TestimonialPages,
   // end of profile page
   // service pages
   PortofolioService,
@@ -50,5 +49,7 @@ export {
   CardTestimonialProfile,
   CardServiceReason,
   CardPrice,
+  Heading,
+  CardTestimonialRounded,
   //end of components
 };

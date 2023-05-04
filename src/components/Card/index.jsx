@@ -2,12 +2,16 @@ import React, { useState, useEffect, useMemo } from 'react';
 Dropdown;
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import { CustomButton } from '..';
+import { CustomButton, Heading } from '..';
 import { FiArrowRightCircle } from 'react-icons/fi';
 import { BsCheckLg } from 'react-icons/bs';
 import Link from 'next/link';
-import dashed from '../../assets/images/design/dashed.png';
 import { Dropdown } from 'flowbite-react';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import testi1 from '../../assets/images/design/testi-1.png';
+import testi2 from '../../assets/images/design/testi-2.png';
+import testi3 from '../../assets/images/design/testi-3.png';
 export function Card({ icons, title, description }) {
   return (
     <div className='bg-[#3F3F3F] shadow-md rounded-xl px-8 py-12'>
@@ -107,21 +111,20 @@ export function CardTestimonialProfile({ imageUrl, name, review, job }) {
   );
 }
 
-export function CardServiceReason({ tagline, taglineDescription, data }) {
+export function CardServiceReason({
+  headTagline,
+  tagline,
+  taglineDescription,
+  data,
+}) {
   return (
     <section className='w-full h-full px-6 py-12 md:px-12 md:py-16 overflow-hidden'>
       <div className='container mx-auto'>
-        <div className='flex flex-col gap-y-3 items-center justify-center '>
-          <h1 className='text-light font-semibold text-xl md:text-3xl capitalize text-center'>
-            Kenapa Memilih Kami?
-          </h1>
-          <h2 className='text-primary font-semibold text-2xl md:text-5xl text-center'>
-            {tagline}
-          </h2>
-          <p className='text-tersier font-light text-base text-center'>
-            {taglineDescription}
-          </p>
-        </div>
+        <Heading
+          tagline={headTagline}
+          serviceTagline={tagline}
+          description={taglineDescription}
+        />
         <div className='grid grid-cols-1 gap-y-8 gap-x-4 md:grid-cols-2 items-center justify-center mt-12 md:mt-16'>
           {data?.map((item, index) => (
             <>
@@ -201,24 +204,11 @@ export function CardPrice({ type, data }) {
   return (
     <>
       <div className='flex flex-col gap-y-2'>
-        <div className='flex flex-col items-center justify-center gap-y-2'>
-          <h1 className='text-light font-normal text-xl md:text-2xl capitalize'>
-            Harga Paket Kami
-          </h1>
-          <h2 className='text-primary font-bold text-center text-2xl md:text-4xl capitalize'>
-            Paket Harga Jasa Pembuatan {type}
-          </h2>
-
-          <p className='text-tersier text-center font-light text-base'>
-            Tentukan paket pembuatan {type} sesuai dengan kebutuhan Anda.
-          </p>
-          <Image
-            src={dashed}
-            width={204}
-            height={8}
-            alt='dashed text'
-          />
-        </div>
+        <Heading
+          tagline={'Harga Paket Kami'}
+          serviceTagline={`Paket Harga Jasa Pembuatan ${type}`}
+          description={`Tentukan paket pembuatan ${type} sesuai dengan kebutuhan Anda.`}
+        />
         <div className='flex items-start md:items-center justify-start md:justify-center mt-8'>
           <div className='portoflio_section flex flex-row md:items-center justify-start md:justify-center gap-y-4 md:gap-y-0 gap-x-4 overflow-x-auto'>
             {windowWidth < 576 ? (
@@ -343,6 +333,88 @@ export function CardPrice({ type, data }) {
     </>
   );
 }
+
+export default function CardTestimonialRounded({
+  headTagline,
+  tagline,
+  taglineDescription,
+}) {
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 1,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
+  const testimonialList = [
+    {
+      name: 'Andrew Schultz',
+      review:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae, in tristique senectus dui pharetra sit.',
+      imageUrl: testi1,
+      job: 'ceo fht group',
+    },
+    {
+      name: 'Andrew Schultz',
+      review:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae, in tristique senectus dui pharetra sit.',
+      imageUrl: testi2,
+      job: 'ceo fht group',
+    },
+    {
+      name: 'Andrew Schultz',
+      review:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae, in tristique senectus dui pharetra sit.',
+      imageUrl: testi3,
+      job: 'ceo fht group',
+    },
+  ];
+  return (
+    <section className='w-full h-full px-6 py-12 md:px-12 md:py-16 overflow-hidden'>
+      <div className='container mx-auto'>
+        <Heading
+          tagline={headTagline}
+          serviceTagline={tagline}
+          description={taglineDescription}
+        />
+        <div className='mt-8'>
+          <Carousel
+            infinite={true}
+            ssr
+            partialVisbile={false}
+            responsive={responsive}
+            removeArrowOnDeviceType={['tablet', 'mobile']}
+            showDots={true}
+            dotListClass='custom-dot-list-style'
+            itemClass='carousel-item-padding-40-px'>
+            {testimonialList.map((item, index) => (
+              <CardTestimonialProfile
+                key={index}
+                imageUrl={item.imageUrl}
+                name={item.name}
+                review={item.review}
+                job={item.job}
+              />
+            ))}
+          </Carousel>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 Card.propTypes = {
   icons: PropTypes.node,
   title: PropTypes.string,
