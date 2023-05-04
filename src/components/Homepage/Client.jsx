@@ -1,6 +1,6 @@
 import React from 'react';
-import dashed from '../../assets/images/design/dashed.png';
 import { CarouselSlider } from '..';
+import dashed from '../../assets/images/design/dashed.png';
 import Image from 'next/image';
 
 export default function Client() {

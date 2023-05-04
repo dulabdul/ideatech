@@ -30,6 +30,12 @@
   .custom-dot-list-style > .react-multi-carousel-dot--active > button {
     @apply bg-primary;
   }
+  .hero_heading > span {
+    @apply text-primary;
+  }
+  .row-odd {
+    @apply row-start-2;
+  }
 }
 header > .container > nav {
   background-color: initial !important;

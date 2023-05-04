@@ -15,8 +15,8 @@ export default function Portfolio({ deviceType }) {
   const [selectedCategory, setSelectedCategory] = useState('website');
   const [windowWidth, setWindoWidth] = useState(null);
   useEffect(() => {
-    setWindoWidth(window.screen.width);
     setPortfolioData(data?.categories);
+    setWindoWidth(window.screen.width);
     const handleWindowResize = () => {
       setWindoWidth(window.innerWidth);
     };

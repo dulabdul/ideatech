@@ -1,4 +1,4 @@
-import { Layout, About, Client, TestimonialProfile } from '@/components';
+import { Layout, About, Client, TestimonialPages } from '@/components';
 
 export default function Profile() {
   return (
@@ -6,7 +6,7 @@ export default function Profile() {
       <Layout>
         <About />
         <Client />
-        <TestimonialProfile />
+        <TestimonialPages />
       </Layout>
     </>
   );
