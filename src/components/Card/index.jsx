@@ -12,6 +12,8 @@ import 'react-multi-carousel/lib/styles.css';
 import testi1 from '../../assets/images/design/testi-1.png';
 import testi2 from '../../assets/images/design/testi-2.png';
 import testi3 from '../../assets/images/design/testi-3.png';
+import useData from '@/hooks';
+
 export function Card({ icons, title, description }) {
   return (
     <div className='bg-[#3F3F3F] shadow-md rounded-xl px-8 py-12'>
@@ -89,7 +91,7 @@ export function CardTestimonial({ name, imageUrl, review, job }) {
 export function CardTestimonialProfile({ imageUrl, name, review, job }) {
   return (
     <div className='bg-transparent lg:border lg:border-tersier lg:ring-1 md:px-12 md:py-8 mt-4 rounded-full'>
-      <div className='flex flex-wrap items-start gap-y-4 gap-x-6 cursor-pointer'>
+      <div className='flex flex-wrap items-start md:items-center md:justify-center gap-y-4 gap-x-6 cursor-pointer'>
         <Image
           src={imageUrl}
           alt={name}
@@ -171,36 +173,41 @@ export function CardServiceReason({
   );
 }
 
-export function CardPrice({ type, data }) {
-  const [selectedCategory, setSelectedCategory] = useState(
-    'website company profile'
-  );
+export function CardPrice({ type, initalSelectCategory }) {
+  const { data, isLoading, isError } = useData();
+  const [selectedCategory, setSelectedCategory] = useState();
+  const [typeOfService, setTypeOfService] = useState('');
+  const [rawDataService, setRawDataService] = useState(null);
   const [windowWidth, setWindoWidth] = useState(null);
   useEffect(() => {
     setWindoWidth(window.screen.width);
     const handleWindowResize = () => {
       setWindoWidth(window.innerWidth);
     };
+    setRawDataService(data?.service.map((items) => items));
     window.addEventListener('resize', handleWindowResize);
-
+    setTypeOfService(type);
+    setSelectedCategory(initalSelectCategory);
     return () => {
       window.removeEventListener('resize', handleWindowResize);
     };
-  }, []);
+  }, [data, type, initalSelectCategory]);
   function filteredServicePackage() {
     if (!selectedCategory) {
-      return data;
+      return rawDataService;
     }
-    return data?.filter((item) => item.title === selectedCategory);
+    return rawDataService?.map((items) =>
+      items.serviceList.filter((item) => item.title === selectedCategory)
+    );
   }
   let filterServiceList = useMemo(filteredServicePackage, [
+    rawDataService,
     selectedCategory,
-    data,
   ]);
   function handleCategoryChange(e) {
     setSelectedCategory(e.target.value);
   }
-  console.log(data);
+
   return (
     <>
       <div className='flex flex-col gap-y-2'>
@@ -217,117 +224,84 @@ export function CardPrice({ type, data }) {
                 className='text-light'
                 label={selectedCategory}
                 dismissOnClick={false}>
-                {data?.map((item, index) => (
-                  <Dropdown.Item
-                    className='capitalize'
-                    key={index}>
-                    <button
-                      type='button'
-                      value={item.title}
-                      className='capitalize'
-                      onClick={handleCategoryChange}>
-                      {item.title}
-                    </button>
-                  </Dropdown.Item>
-                ))}
+                {rawDataService?.map((items) => {
+                  return items.typeService === typeOfService
+                    ? items.serviceList.map((item) => (
+                        <Dropdown.Item
+                          className='capitalize'
+                          key={item.id}>
+                          <button
+                            type='button'
+                            value={item.title}
+                            className='capitalize'
+                            onClick={handleCategoryChange}>
+                            {item.title}
+                          </button>
+                        </Dropdown.Item>
+                      ))
+                    : '';
+                })}
               </Dropdown>
             ) : (
-              data?.map((item, index) => (
-                <div key={index}>
-                  <button
-                    type='button'
-                    value={item.title}
-                    onClick={handleCategoryChange}
-                    className={`px-6 py-1 text-start text-light capitalize border border-primary ring-1 hover:bg-primary ${
-                      selectedCategory === item.title ? 'bg-primary' : ''
-                    }`}>
-                    {item.title}
-                  </button>
-                </div>
-              ))
+              rawDataService?.map((items) => {
+                return items.typeService === typeOfService
+                  ? items.serviceList.map((item) => (
+                      <div key={item.id}>
+                        <button
+                          type='button'
+                          value={item.title}
+                          onClick={handleCategoryChange}
+                          className={`px-6 py-1 text-start text-light capitalize border border-primary ring-1 hover:bg-primary ${
+                            selectedCategory === item.title ? 'bg-primary' : ''
+                          }`}>
+                          {item.title}
+                        </button>
+                      </div>
+                    ))
+                  : '';
+              })
             )}
           </div>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 items-center justify-center gap-6 py-8'>
-          {selectedCategory === 'website company profile'
-            ? filterServiceList?.map((item) => {
-                return item.servicePackage.length === 0
-                  ? 'No Data'
-                  : item.servicePackage.map((item) => (
-                      <div
-                        key={item.id}
-                        className='bg-tersier rounded-lg shadow-md p-5 md:px-8 md:py-12'>
-                        <h3 className='text-slate-700 font-semibold text-xl md:text-2xl capitalize'>
-                          {item.name}
-                        </h3>
-                        <h2 className='text-slate-900 font-bold text-4xl md:text-4xl capitalize tracking-wider my-2'>
-                          IDR {item.price}K
-                        </h2>
-                        <CustomButton
-                          type='link'
-                          isExternal
-                          href='https://whatsapp.com'
-                          target='_blank'
-                          isFlex
-                          isPrimary
-                          isRounded
-                          className='items-center justify-center my-3 md:my-6 px-4 py-2 md:px-6 md:py-3 text-light hover:opacity-80 text-xl'>
-                          Pilih Paket{' '}
-                          <FiArrowRightCircle className='text-2xl ml-2' />{' '}
-                        </CustomButton>
-                        <div className='flex flex-col md:items-center mt-6'>
-                          <ul>
-                            {item.fiturList.map((fiturItem, index) => (
-                              <li
-                                key={index}
-                                className='flex items-center gap-x-1 text-lg text-slate-800 capitalize'>
-                                <BsCheckLg /> {fiturItem.fitur}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    ));
-              })
-            : filterServiceList?.map((item) => {
-                return item.servicePackage.length === 0
-                  ? 'No Data'
-                  : item.servicePackage.map((item, index) => (
-                      <div
-                        key={item.id}
-                        className='bg-tersier rounded-lg shadow-md p-5 md:px-8 md:py-12'>
-                        <h3 className='text-slate-700 font-semibold text-xl md:text-2xl capitalize'>
-                          {item.name}
-                        </h3>
-                        <h2 className='text-slate-900 font-bold text-4xl md:text-4xl capitalize tracking-wider my-2'>
-                          IDR {item.price}K
-                        </h2>
-                        <CustomButton
-                          type='link'
-                          isExternal
-                          href='https://whatsapp.com'
-                          target='_blank'
-                          isFlex
-                          isPrimary
-                          isRounded
-                          className='items-center justify-center my-3 md:my-6 px-4 py-2 md:px-6 md:py-3 text-light hover:opacity-80 text-xl'>
-                          Pilih Paket{' '}
-                          <FiArrowRightCircle className='text-2xl ml-2' />{' '}
-                        </CustomButton>
-                        <div className='flex flex-col md:items-center mt-6'>
-                          <ul>
-                            {item.fiturList.map((fiturItem, index) => (
-                              <li
-                                key={index}
-                                className='flex items-center gap-x-1 text-lg text-slate-800 capitalize'>
-                                <BsCheckLg /> {fiturItem.fitur}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    ));
-              })}
+          {filterServiceList?.map((items) => {
+            return items?.map((services) => {
+              return services.servicePackage.map((service) => (
+                <div
+                  key={service.id}
+                  className='bg-tersier rounded-lg shadow-md p-5 md:px-8 md:py-12'>
+                  <h3 className='text-slate-700 font-semibold text-xl md:text-2xl capitalize'>
+                    {service.name}
+                  </h3>
+                  <h2 className='text-slate-900 font-bold text-4xl md:text-4xl capitalize tracking-wider my-2'>
+                    IDR {service.price}K
+                  </h2>
+                  <CustomButton
+                    type='link'
+                    isExternal
+                    href='https://whatsapp.com'
+                    target='_blank'
+                    isFlex
+                    isPrimary
+                    isRounded
+                    className='items-center justify-center my-3 md:my-6 px-4 py-2 md:px-6 md:py-3 text-light hover:opacity-80 text-xl'>
+                    Pilih Paket <FiArrowRightCircle className='text-2xl ml-2' />{' '}
+                  </CustomButton>
+                  <div className='flex flex-col md:items-center mt-6'>
+                    <ul>
+                      {service.fiturList.map((fiturservice, index) => (
+                        <li
+                          key={index}
+                          className='flex items-center gap-x-1 text-lg text-slate-800 capitalize'>
+                          <BsCheckLg /> {fiturservice.fitur}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ));
+            });
+          })}
         </div>
       </div>
     </>

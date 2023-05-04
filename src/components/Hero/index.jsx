@@ -79,7 +79,7 @@ export default function Hero({
           </div>
           <div className='w-full h-full relative z-10 hidden md:flex justify-center '>
             <Image
-              src={heroImg}
+              src={imageHero}
               width={420}
               height={420}
               style={{

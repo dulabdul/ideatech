@@ -8,10 +8,11 @@ export default function PortofolioService({
   headTagline,
   tagline,
   taglineDescription,
+  type,
 }) {
   const { data, isError, isLoading } = useData();
   const [portfolioData, setPortfolioData] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState('website');
+  const [selectedCategory, setSelectedCategory] = useState(type);
 
   useEffect(() => {
     setPortfolioData(data?.categories);
@@ -36,16 +37,16 @@ export default function PortofolioService({
           <div className='portoflio_section flex items-center justify-start gap-y-4 md:gap-y-0 gap-x-4 overflow-x-auto'>
             <button
               type='button'
-              value='website'
+              value={type}
               className={`px-6 py-1 text-start text-light capitalize border border-primary ring-1 hover:bg-primary ${
-                selectedCategory === 'website' ? 'bg-primary' : ''
+                selectedCategory === type ? 'bg-primary' : ''
               }`}>
-              website
+              {type}
             </button>
           </div>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-center mt-8'>
-          {selectedCategory === 'website'
+          {selectedCategory === type
             ? filterList?.map((item) => {
                 return item.projects.length === 0
                   ? 'No data'

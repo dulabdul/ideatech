@@ -90,162 +90,334 @@
   ],
   "service": [
     {
-      "title": "website company profile",
-      "servicePackage": [
+      "typeService": "website",
+      "serviceList": [
         {
-          "id": 1,
-          "name": "paket ekonomis",
-          "price": 200,
-          "fiturList": [
+          "title": "website company profile",
+          "servicePackage": [
             {
-              "fitur": "domain"
+              "id": 1,
+              "name": "paket ekonomis",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
             },
             {
-              "fitur": "kapasitas 500mb"
+              "id": 2,
+              "name": "paket ekonomis",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
             },
             {
-              "fitur": "custom tema"
+              "id": 3,
+              "name": "paket ekonomis",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
             },
             {
-              "fitur": "5 halaman landing page"
+              "id": 4,
+              "name": "paket ekonomis",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
             }
           ]
         },
         {
-          "id": 2,
-          "name": "paket ekonomis",
-          "price": 200,
-          "fiturList": [
+          "title": "website custom",
+          "servicePackage": [
             {
-              "fitur": "domain"
+              "id": 1,
+              "name": "paket premium",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
             },
             {
-              "fitur": "kapasitas 500mb"
+              "id": 2,
+              "name": "paket premium",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
             },
             {
-              "fitur": "custom tema"
+              "id": 3,
+              "name": "paket premium",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
             },
             {
-              "fitur": "5 halaman landing page"
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "name": "paket ekonomis",
-          "price": 200,
-          "fiturList": [
-            {
-              "fitur": "domain"
-            },
-            {
-              "fitur": "kapasitas 500mb"
-            },
-            {
-              "fitur": "custom tema"
-            },
-            {
-              "fitur": "5 halaman landing page"
-            }
-          ]
-        },
-        {
-          "id": 4,
-          "name": "paket ekonomis",
-          "price": 200,
-          "fiturList": [
-            {
-              "fitur": "domain"
-            },
-            {
-              "fitur": "kapasitas 500mb"
-            },
-            {
-              "fitur": "custom tema"
-            },
-            {
-              "fitur": "5 halaman landing page"
+              "id": 4,
+              "name": "paket premium",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
             }
           ]
         }
       ]
     },
     {
-      "title": "website custom",
-      "servicePackage": [
+      "typeService": "digital marketing",
+      "serviceList": [
         {
-          "id": 1,
-          "name": "paket premium",
-          "price": 200,
-          "fiturList": [
+          "title": "google ads",
+          "servicePackage": [
             {
-              "fitur": "domain"
+              "id": 1,
+              "name": "paket silver",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
             },
             {
-              "fitur": "kapasitas 500mb"
+              "id": 2,
+              "name": "paket silver",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
             },
             {
-              "fitur": "custom tema"
+              "id": 3,
+              "name": "paket silver",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
             },
             {
-              "fitur": "5 halaman landing page"
+              "id": 4,
+              "name": "paket silver",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
             }
           ]
         },
         {
-          "id": 2,
-          "name": "paket premium",
-          "price": 200,
-          "fiturList": [
+          "title": "Tiktok Ads",
+          "servicePackage": [
             {
-              "fitur": "domain"
+              "id": 1,
+              "name": "paket tiktok",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
             },
             {
-              "fitur": "kapasitas 500mb"
+              "id": 2,
+              "name": "paket bronze",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
             },
             {
-              "fitur": "custom tema"
+              "id": 3,
+              "name": "paket bronze",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
             },
             {
-              "fitur": "5 halaman landing page"
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "name": "paket premium",
-          "price": 200,
-          "fiturList": [
-            {
-              "fitur": "domain"
-            },
-            {
-              "fitur": "kapasitas 500mb"
-            },
-            {
-              "fitur": "custom tema"
-            },
-            {
-              "fitur": "5 halaman landing page"
-            }
-          ]
-        },
-        {
-          "id": 4,
-          "name": "paket premium",
-          "price": 200,
-          "fiturList": [
-            {
-              "fitur": "domain"
-            },
-            {
-              "fitur": "kapasitas 500mb"
-            },
-            {
-              "fitur": "custom tema"
-            },
-            {
-              "fitur": "5 halaman landing page"
+              "id": 4,
+              "name": "paket bronze",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
             }
           ]
         }

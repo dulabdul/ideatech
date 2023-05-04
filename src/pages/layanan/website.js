@@ -3,12 +3,11 @@ import {
   Hero,
   Layout,
   PortofolioService,
-  TestimonialPages,
   Price,
   CardTestimonialRounded,
 } from '@/components';
 import React from 'react';
-import heroImg from '../../assets/images/design/hero.png';
+import heroImg from '../../assets/images/design/testi.png';
 import serviceReason1 from '../../assets/images/design/service-reason-1.png';
 import serviceReason2 from '../../assets/images/design/service-reason-2.gif';
 import serviceReason3 from '../../assets/images/design/service-reason-3.png';
@@ -35,6 +34,12 @@ export default function Website() {
     tagline: 'Paket Harga Jasa Pembuatan Website',
     taglineDescription:
       'Berikut beberapa hasil pekerjaan kami sebagai bahan pertimbangan Anda memilih jasa kami.',
+  };
+  const taglineDataCardProfile = {
+    headTagline: 'Testimonial Mitra Bisnis Kami',
+    tagline: '',
+    taglineDescription:
+      'Pendapat klien kami yang puas dengan pelayanan yang diberikan oleh Kodeight Digital. Sekarang adalah giliran Anda untuk menjadi seperti mereka dengan menggunakan layanan yang kami tawarkan.',
   };
   const serviceData = [
     {
@@ -68,12 +73,7 @@ export default function Website() {
         'Selama Anda masih menggunakan layanan di Kodeight kami pastikan website Anda selalu optimal dengan jaminan garansi dan maintenance.',
     },
   ];
-  const taglineDataCardProfile = {
-    headTagline: 'Testimonial Mitra Bisnis Kami',
-    tagline: '',
-    taglineDescription:
-      'Pendapat klien kami yang puas dengan pelayanan yang diberikan oleh Kodeight Digital. Sekarang adalah giliran Anda untuk menjadi seperti mereka dengan menggunakan layanan yang kami tawarkan.',
-  };
+
   return (
     <>
       <Layout>
@@ -91,11 +91,15 @@ export default function Website() {
           taglineDescription={taglineDataServiceReason.taglineDescription}
         />
         <PortofolioService
+          type={'website'}
           headTagline={taglineDataPortfolio.headTagline}
           tagline={taglineDataPortfolio.tagline}
           taglineDescription={taglineDataPortfolio.taglineDescription}
         />
-        <Price />
+        <Price
+          type={'website'}
+          initCategory={'website company profile'}
+        />
         <CardTestimonialRounded
           headTagline={taglineDataCardProfile.headTagline}
           tagline={taglineDataCardProfile.tagline}
