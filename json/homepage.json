@@ -422,6 +422,173 @@
           ]
         }
       ]
+    },
+    {
+      "typeService": "branding & content creation",
+      "serviceList": [
+        {
+          "title": "logo design",
+          "servicePackage": [
+            {
+              "id": 1,
+              "name": "paket silver",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "name": "paket silver",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
+            },
+            {
+              "id": 3,
+              "name": "paket silver",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
+            },
+            {
+              "id": 4,
+              "name": "paket silver",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "company profile",
+          "servicePackage": [
+            {
+              "id": 1,
+              "name": "paket compro",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "name": "paket bronse",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
+            },
+            {
+              "id": 3,
+              "name": "paket bronze",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
+            },
+            {
+              "id": 4,
+              "name": "paket bronze",
+              "price": 200,
+              "fiturList": [
+                {
+                  "fitur": "domain"
+                },
+                {
+                  "fitur": "kapasitas 500mb"
+                },
+                {
+                  "fitur": "custom tema"
+                },
+                {
+                  "fitur": "5 halaman landing page"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

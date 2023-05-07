@@ -39,7 +39,7 @@ export default function Hero({
             <CustomButton
               isSecondary
               isRoundedFull
-              className='button w-[50%] md:w-[35%] font-bold hidden md:block'>
+              className='button w-[50%] font-bold hidden md:block'>
               <span className='bg-gradient-primary bg-clip-text text-transparent  z-10 capitalize'>
                 {type}
               </span>

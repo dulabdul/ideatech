@@ -1,5 +1,5 @@
 import CustomButton from './Button';
-import CardTestimonialRounded, {
+import {
   Card,
   CardPortfolio,
   CardPrice,
@@ -7,6 +7,8 @@ import CardTestimonialRounded, {
   CardServiceReason,
   CardTestimonial,
   CardTestimonialProfile,
+  CardTestimonialRounded,
+  CardServicePriority,
 } from './Card';
 import CarouselSlider from './Carousel';
 import Heading from './Heading';
@@ -51,5 +53,6 @@ export {
   CardPrice,
   Heading,
   CardTestimonialRounded,
+  CardServicePriority,
   //end of components
 };

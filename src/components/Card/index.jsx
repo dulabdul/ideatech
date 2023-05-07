@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { CustomButton, Heading } from '..';
 import { FiArrowRightCircle } from 'react-icons/fi';
 import { BsCheckLg } from 'react-icons/bs';
+
 import Link from 'next/link';
 import { Dropdown } from 'flowbite-react';
 import Carousel from 'react-multi-carousel';
@@ -13,6 +14,7 @@ import testi1 from '../../assets/images/design/testi-1.png';
 import testi2 from '../../assets/images/design/testi-2.png';
 import testi3 from '../../assets/images/design/testi-3.png';
 import useData from '@/hooks';
+import { Parallax } from 'react-scroll-parallax';
 
 export function Card({ icons, title, description }) {
   return (
@@ -308,7 +310,7 @@ export function CardPrice({ type, initalSelectCategory }) {
   );
 }
 
-export default function CardTestimonialRounded({
+export function CardTestimonialRounded({
   headTagline,
   tagline,
   taglineDescription,
@@ -327,7 +329,7 @@ export default function CardTestimonialRounded({
       breakpoint: { max: 1024, min: 464 },
       items: 1,
     },
-    mobile: {
+    Mobile: {
       breakpoint: { max: 464, min: 0 },
       items: 1,
     },
@@ -389,6 +391,146 @@ export default function CardTestimonialRounded({
   );
 }
 
+export function CardServiceReasonTwo({ type, description, data }) {
+  const [windowWidth, setWindoWidth] = useState(null);
+  useEffect(() => {
+    setWindoWidth(window.screen.width);
+    const handleWindowResize = () => {
+      setWindoWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
+  console.log(windowWidth);
+
+  return (
+    <section className='w-full h-full overflow-hidden px-6 py-12 md:px-12 md:py-16 relative z-10'>
+      <div className='container mx-auto'>
+        <div className='grid grid-cols-1 md:grid-cols-2 items-start justify-center'>
+          {windowWidth < 576 ? (
+            <div>
+              <CustomButton
+                isFlex
+                isGradient
+                type='button'
+                isRounded
+                className='button text-light font-normal text-2xl capitalize'>
+                {type}
+              </CustomButton>
+              <div className='flex flex-col mt-12 gap-y-6'>
+                <h2 className='text-light font-semibold text-2xl md:text-5xl tracking-wider capitalize'>
+                  Manfaat Memiliki
+                  <br /> <span className='text-primary capitalize'>
+                    {type}
+                  </span>{' '}
+                  <br /> Untuk Bisnis Anda
+                </h2>
+                <p className='text-tersier font-light text-base mb-6 md:mb-0'>
+                  {description}
+                </p>
+              </div>
+            </div>
+          ) : (
+            <Parallax translateY={[-150, 100]}>
+              <div>
+                <CustomButton
+                  isFlex
+                  isGradient
+                  type='button'
+                  isRounded
+                  className='button text-light font-normal text-2xl capitalize'>
+                  {type}
+                </CustomButton>
+                <div className='flex flex-col mt-12 gap-y-6'>
+                  <h2 className='text-light font-semibold text-2xl md:text-5xl tracking-wider capitalize'>
+                    Manfaat Memiliki
+                    <br />{' '}
+                    <span className='text-primary capitalize'>{type}</span>{' '}
+                    <br /> Untuk Bisnis Anda
+                  </h2>
+                  <p className='text-tersier font-light text-base'>
+                    {description}
+                  </p>
+                </div>
+              </div>
+            </Parallax>
+          )}
+          <div className='flex flex-col overflow-scroll'>
+            {data.map((item, index) => (
+              <div
+                className='flex flex-row justify-start items-start'
+                key={index}>
+                <div>
+                  <h1 className='text-light font-bold text-2xl md:text-6xl'>
+                    {index + 1}
+                  </h1>
+                </div>
+                <div className='ml-2'>
+                  <h2 className='text-light font-semibold text-lg md:text-3xl capitalize'>
+                    {item.heading}
+                  </h2>
+                  <p className='text-tersier font-light text-base leading-relaxed capitalize'>
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function CardServicePriority({ type, data }) {
+  return (
+    <section className='w-full h-full overflow-hidden px-6 py-12 md:px-12 md:py-16'>
+      <div className='container mx-auto'>
+        <div className='flex flex-col items-center justify-center gap-y-2'>
+          <CustomButton
+            isFlex
+            isGradient
+            isRounded
+            className='button text-light capitalize'>
+            {type}
+          </CustomButton>
+          <h1 className='text-light font-semibold text-2xl md:text-4xl mt-4'>
+            Layanan Lengkap
+          </h1>
+          <h1 className='text-primary font-semibold text-2xl md:text-4xl capitalize'>
+            {type}
+          </h1>
+          <h1 className='text-light font-semibold text-2xl md:text-4xl'>
+            Untuk Bisnis Anda
+          </h1>
+        </div>
+        <div className='grid mt-12 grid-cols-1 gap-5 md:grid-cols-3 items-center justify-center'>
+          {data.map((item, index) => (
+            <div
+              key={index}
+              className='flex flex-wrap items-center px-3 py-4 md:px-6 md:py-3 bg-transparent group shadow-md border border-tersier rounded-lg hover:bg-primary hover:border-none transition-all duration-400'>
+              <div className='bg-slate-200 transition-all flex items-center justify-center rounded-full w-12 h-12 md:w-16 md:h-16'>
+                {item.icons}
+              </div>
+              <div className='ml-2 md:ml-4'>
+                {' '}
+                <h4 className='text-light font-semibold text-lg md:text-xl uppercase'>
+                  {item.title}
+                </h4>
+                <p className='font-light text-tersier text-sm md:text-base group-hover:text-light capitalize'>
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 Card.propTypes = {
   icons: PropTypes.node,
   title: PropTypes.string,
