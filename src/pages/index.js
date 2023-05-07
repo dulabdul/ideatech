@@ -18,7 +18,12 @@ export default function Home() {
       'Tingkatkan nilai dan penjualan bisnis anda melalui digital marketing yang dikerjakan secara profesional.',
     buttonCTA: false,
   };
-
+  const taglineClient = {
+    headTagline: 'Trusted By',
+    tagline: '',
+    taglineDescription:
+      'Dipercaya oleh Ribuan Pebisnis, Instansi, dan Perusahaan Ternama.',
+  };
   return (
     <>
       <Layout>
@@ -29,7 +34,10 @@ export default function Home() {
           description={heroData.description}
           buttonCTA={heroData.buttonCTA}
         />
-        <Client />
+        <Client
+          tagline={taglineClient.headTagline}
+          taglineDescription={taglineClient.taglineDescription}
+        />
         <WhyChoseUs />
         <Service />
         <Portfolio />
