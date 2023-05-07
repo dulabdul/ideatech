@@ -70,7 +70,6 @@ export default function CarouselSlider({ deviceType }) {
         infinite={true}
         ssr
         partialVisbile={false}
-        deviceType={deviceType}
         responsive={responsive}
         removeArrowOnDeviceType={['tablet', 'mobile']}
         itemClass={styles.imageItem}>

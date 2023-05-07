@@ -316,22 +316,20 @@ export function CardTestimonialRounded({
   taglineDescription,
 }) {
   const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 1,
-    },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 1,
+      paritialVisibilityGutter: 60,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
       items: 1,
+      paritialVisibilityGutter: 50,
     },
-    Mobile: {
+    mobile: {
       breakpoint: { max: 464, min: 0 },
       items: 1,
+      paritialVisibilityGutter: 30,
     },
   };
   const testimonialList = [
@@ -417,7 +415,7 @@ export function CardServiceReasonTwo({ type, description, data }) {
                 isGradient
                 type='button'
                 isRounded
-                className='button text-light font-normal text-2xl capitalize'>
+                className='button text-light font-normal text-start text-xl capitalize'>
                 {type}
               </CustomButton>
               <div className='flex flex-col mt-12 gap-y-6'>
@@ -500,7 +498,7 @@ export function CardServicePriority({ type, data }) {
           <h1 className='text-light font-semibold text-2xl md:text-4xl mt-4'>
             Layanan Lengkap
           </h1>
-          <h1 className='text-primary font-semibold text-2xl md:text-4xl capitalize'>
+          <h1 className='text-primary font-semibold text-2xl md:text-4xl capitalize text-center'>
             {type}
           </h1>
           <h1 className='text-light font-semibold text-2xl md:text-4xl'>
