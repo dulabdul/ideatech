@@ -1,5 +1,12 @@
+import { Layout, Portfolio } from '@/components';
 import React from 'react';
 
 export default function portfolio() {
-  return <div>portfolio</div>;
+  return (
+    <>
+      <Layout>
+        <Portfolio />
+      </Layout>
+    </>
+  );
 }

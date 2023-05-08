@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 import { CustomButton, Heading } from '..';
 import { FiArrowRightCircle } from 'react-icons/fi';
-import { BsCheckLg } from 'react-icons/bs';
+import { BsCheckLg, BsFillTelephoneFill, BsWhatsapp } from 'react-icons/bs';
 
 import Link from 'next/link';
 import { Dropdown } from 'flowbite-react';
@@ -525,6 +525,65 @@ export function CardServicePriority({ type, data }) {
             </div>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+export function CardContact() {
+  const contactData = [
+    {
+      icons: <BsFillTelephoneFill className='text-xl text-light' />,
+      title: ' 0896 1990 23243',
+      description: 'Hubungi via Whatsapp',
+    },
+    {
+      icons: <BsWhatsapp className='text-xl text-light' />,
+      title: ' 0896 1990 23243',
+      description: 'Hubungi via Whatsapp',
+    },
+    {
+      icons: <BsFillTelephoneFill className='text-xl text-light' />,
+      title: ' 0896 1990 23243',
+      description: 'Hubungi via Whatsapp',
+    },
+    {
+      icons: <BsFillTelephoneFill className='text-xl text-light' />,
+      title: ' 0896 1990 23243',
+      description: 'Hubungi via Whatsapp',
+    },
+  ];
+  return (
+    <section className='w-full h-full overflow-hidden px-6 py-24 md:pt-36 md:px-16'>
+      <Heading
+        tagline={'IdeaTech Digital'}
+        serviceTagline={'Kontak Kami'}
+        description={
+          'Konsultasikan kebutuhan Anda bersama kami, diskusi kapanpun dan dimanapun kami siap membantu Anda!'
+        }
+      />
+      <div className='grid grid-cols-1 md:grid-cols-4 items-center justify-center gap-4 mt-6 md:mt-12'>
+        {contactData.map((item, index) => (
+          <CustomButton
+            key={index}
+            type='link'
+            isExternal
+            target='_blank'
+            href='https://wwww.facebook.com'
+            className='group transition-all'>
+            <div className='bg-tersier px-6 py-3 rounded-lg shadow-md flex flex-col items-center justify-center'>
+              <div className='rounded-full w-11 h-11 bg-primary flex items-center justify-center'>
+                {item.icons}
+              </div>
+              <p className='text-slate-900 my-1 md:text-2xl text-xl font-semibold'>
+                {item.title}
+              </p>
+              <p className='text-slate-800 font-light text-base group-hover:text-blue-800 transition-all'>
+                {item.description}
+              </p>
+            </div>
+          </CustomButton>
+        ))}
       </div>
     </section>
   );

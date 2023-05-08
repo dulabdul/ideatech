@@ -124,7 +124,6 @@ export default function Header() {
                   key={index}
                   className='mt-2'>
                   <Link
-                    type='link'
                     href={item.destination}
                     className='text-tersier hover:text-primary transition-all'>
                     {item.name}

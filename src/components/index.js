@@ -9,6 +9,7 @@ import {
   CardTestimonialProfile,
   CardTestimonialRounded,
   CardServicePriority,
+  CardContact,
 } from './Card';
 import CarouselSlider from './Carousel';
 import Heading from './Heading';
@@ -54,5 +55,6 @@ export {
   Heading,
   CardTestimonialRounded,
   CardServicePriority,
+  CardContact,
   //end of components
 };

@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import dashed from '../../assets/images/design/dashed.png';
 import Image from 'next/image';
+
 import useData from '@/hooks';
 import { CardPortfolio, CustomButton } from '..';
 import { FiArrowRightCircle } from 'react-icons/fi';
@@ -9,7 +10,10 @@ import gradientWhiteBG from '../../assets/images/design/g-white.png';
 import gradient56 from '../../assets/images/design/rectangle-56.png';
 import gradient60 from '../../assets/images/design/rectangle-60.png';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 export default function Portfolio({ deviceType }) {
+  const router = useRouter();
+  console.log(router.pathname);
   const { data, isError, isLoading } = useData();
   const [portfolioData, setPortfolioData] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('website');
@@ -39,7 +43,10 @@ export default function Portfolio({ deviceType }) {
   }
 
   return (
-    <section className='w-full h-full overflow-hidden px-6 py-12 md:px-12 md:py-16'>
+    <section
+      className={`w-full h-full overflow-hidden px-6 ${
+        router.pathname !== '/' ? 'py-24 md:py-32' : 'py-12 md:py-14'
+      }`}>
       <div className='container mx-auto relative z-10 md:static'>
         <div className='flex relative z-10 md:static flex-col items-center justify-center'>
           <h1 className='text-light font-semibold text-2xl md:text-4xl'>
@@ -105,18 +112,31 @@ export default function Portfolio({ deviceType }) {
               ))
             )}
           </div>
-          <Link
-            href='/portfolio'
-            className='flex text-light underlinex md:justify-end hover:text-primary items-center mt-4 md:mt-0'>
-            Lihat semua portofolio{' '}
-            <FiArrowRightCircle className='ml-2 text-xl' />
-          </Link>
+          {router.pathname === '/portfolio' ? (
+            ''
+          ) : (
+            <Link
+              href='/portfolio'
+              className='flex text-light underlinex md:justify-end hover:text-primary items-center mt-4 md:mt-0'>
+              Lihat semua portofolio{' '}
+              <FiArrowRightCircle className='ml-2 text-xl' />
+            </Link>
+          )}
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-center'>
           {selectedCategory === 'website'
             ? filterList?.map((item) => {
                 return item.projects.length === 0
                   ? 'No data'
+                  : router.pathname !== '/'
+                  ? item.projects.map((project) => (
+                      <CardPortfolio
+                        key={project.id}
+                        title={project.title}
+                        image={project.imageUrl}
+                        url={project.url}
+                      />
+                    ))
                   : item.projects.slice(0, 4).map((project) => (
                       <CardPortfolio
                         key={project.id}
@@ -129,6 +149,15 @@ export default function Portfolio({ deviceType }) {
             : filterList?.map((item) => {
                 return item.projects.length === 0
                   ? 'No Data'
+                  : router.pathname !== '/'
+                  ? item.projects.map((project) => (
+                      <CardPortfolio
+                        key={project.id}
+                        title={project.title}
+                        image={project.imageUrl}
+                        url={project.url}
+                      />
+                    ))
                   : item.projects.slice(0, 4).map((project) => (
                       <CardPortfolio
                         key={project.id}
@@ -144,7 +173,7 @@ export default function Portfolio({ deviceType }) {
           width={634}
           height={634}
           alt='gradient-one'
-          className='absolute z-0'
+          className='absolute z-0 md:block hidden'
         />
       </div>
     </section>
