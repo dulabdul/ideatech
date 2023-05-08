@@ -2,7 +2,11 @@
 @tailwind base;
 @layer base {
   body {
-    @apply bg-bgDark object-cover object-center bg-no-repeat font-Inter h-[2000px];
+    @apply bg-bgDark object-cover object-center bg-no-repeat font-Inter;
+  }
+  /* width */
+  ::-webkit-scrollbar {
+    width: 0;
   }
 }
 @tailwind components;
@@ -20,6 +24,24 @@
   }
   .button {
     @apply cursor-pointer px-7 py-1 transition-all;
+  }
+  .portoflio_section > .w-fit > button {
+    @apply text-light capitalize py-1 px-4 bg-transparent border border-primary hover:bg-primary transition-all;
+  }
+  .custom-dot-list-style > li > button {
+    @apply border border-primary;
+  }
+  .custom-dot-list-style > .react-multi-carousel-dot--active > button {
+    @apply bg-primary;
+  }
+  .hero_heading > span {
+    @apply text-primary;
+  }
+  .row-odd {
+    @apply row-start-2;
+  }
+  .is-sticky {
+    @apply fixed z-[999] top-[10px];
   }
 }
 header > .container > nav {

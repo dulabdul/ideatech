@@ -8,6 +8,8 @@ export default function CustomButton(props) {
   if (props.hasShadow) className.push('shadow-sm');
   if (props.isPrimary) className.push('bg-primary');
   if (props.isSecondary) className.push('bg-[#fff]');
+  if (props.isTransparent)
+    className.push('bg-transparent border border-primary');
   if (props.isGradient) className.push('bg-gradient-primary');
   if (props.isRounded) className.push('rounded-md');
   if (props.isRoundedFull) className.push('rounded-full');

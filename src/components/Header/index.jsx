@@ -4,29 +4,35 @@ import { useState, useEffect } from 'react';
 import { FiDownload } from 'react-icons/fi';
 import styles from './Header.module.css';
 import CustomButton from '../Button';
+import Link from 'next/link';
 export default function Header() {
   const menuList = [
     {
       name: 'Home',
       isDropdown: false,
-      destination: {},
+      destination: '/',
     },
     {
       name: 'Profile',
       isDropdown: false,
-      destination: {},
+      destination: '/profile',
     },
     {
       name: 'Layanan',
       isDropdown: true,
+      destination: '/layanan',
       dropdownContent: [
         {
           title: 'Website Development',
-          destionation: {},
+          destionation: '/layanan/website',
         },
         {
           title: 'Digital Marketing',
-          destionation: {},
+          destionation: '/layanan/digital-marketing',
+        },
+        {
+          title: 'Branding & Content Creation',
+          destionation: '/layanan/branding-content-creation',
         },
       ],
       destination: {},
@@ -35,12 +41,12 @@ export default function Header() {
       name: 'Portofolio',
       isDropdown: false,
 
-      destination: {},
+      destination: '/portfolio',
     },
     {
       name: 'Kontak',
       isDropdown: false,
-      destination: {},
+      destination: '/kontak',
     },
   ];
   const [scrolledNav, setScrolledNav] = useState(null);
@@ -67,16 +73,17 @@ export default function Header() {
         <Navbar
           fluid={true}
           rounded={true}>
-          <Navbar.Brand
+          <Link
             href='/'
-            className=''>
+            className='flex items-center'>
             <Image
               width={64}
               height={64}
+              style={{ width: 'auto', height: 'auto' }}
               src='/example.png'
-              alt='Abdul Rahman Logo'
+              alt='Tidea Logo'
             />
-          </Navbar.Brand>
+          </Link>
           <div className='flex md:order-2 gap-2'>
             <CustomButton
               href='#'
@@ -98,14 +105,16 @@ export default function Header() {
               item.isDropdown ? (
                 <li
                   key={index}
-                  className='mt-2 text-tersier'>
+                  className='mt-2 text-tersier hover:text-primary transition-all'>
                   <Dropdown
-                    className='transition-all duration-400 '
+                    className='transition-all duration-400'
                     inline={true}
                     label={item.name}>
                     {item.dropdownContent.map((dropdown, index) => (
                       <Dropdown.Item key={index}>
-                        {dropdown.title}
+                        <Link href={dropdown.destionation}>
+                          {dropdown.title}
+                        </Link>
                       </Dropdown.Item>
                     ))}
                   </Dropdown>
@@ -114,11 +123,11 @@ export default function Header() {
                 <li
                   key={index}
                   className='mt-2'>
-                  <CustomButton
-                    type='button'
-                    className='text-tersier'>
+                  <Link
+                    href={item.destination}
+                    className='text-tersier hover:text-primary transition-all'>
                     {item.name}
-                  </CustomButton>
+                  </Link>
                 </li>
               )
             )}
